@@ -40,7 +40,7 @@ public class UsuarioControllerTest {
 	public void deveCriarUmUsuario() {
 		
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>
-		(new Usuario(0l,"Paulo Antunes","paulo_antunes@email.com.br","123456"));
+		(new Usuario(0l,"Paulo Antunes","paulo_antunes@email.com.br","1234567"));
 		
 		ResponseEntity<Usuario> resposta = testRestTemplate
 				.exchange("/usuarios/cadastrar", HttpMethod.POST, requisicao, Usuario.class);
@@ -55,10 +55,10 @@ public class UsuarioControllerTest {
 	public void naoDeveDuplicarUsuario() {
 		
 		usuarioService.cadastraUsuario
-		(new Usuario(0l,"Maria da Silva","maria_silva@email.com.br","123456"));
+		(new Usuario(0l,"Maria da Silva","maria_silva@email.com.br","1234567"));
 	
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>
-		(new Usuario(0l,"Maria da Silva","maria_silva@email.com.br","123456"));
+		(new Usuario(0l,"Maria da Silva","maria_silva@email.com.br","1234567"));
 		
 		ResponseEntity<Usuario> resposta = testRestTemplate
 				.exchange("/usuarios/cadastrar",HttpMethod.POST, requisicao, Usuario.class);

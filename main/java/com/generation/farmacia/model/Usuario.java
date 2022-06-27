@@ -50,7 +50,7 @@ public class Usuario {
 		
 	}
 	
-	public Usuario() {}
+	public Usuario() { }
 
 	public long getId() {
 		return id;

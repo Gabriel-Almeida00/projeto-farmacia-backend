@@ -33,12 +33,13 @@ public class UsuarioRepositoryTest {
 		
 		repository.save(new Usuario(0L, "Brocco silva", "broco@gmail.com", "brocolis"));
 		
-		repository.save(new Usuario(0L, "Mayara", "will31smith@gmail.com", "cenoura"));
+		repository.save(new Usuario(0L, "Mayara anjos", "will31smith@gmail.com", "cenoura"));
 	}
 	
 	@Test
 	@DisplayName("Teste que retorna 1 usuario")
 	public void retornaUmUsuario() {
+		
 		Optional<Usuario> usuario = repository.findByUsuario("isadora@gmail.com");
 		assertTrue(usuario.get().getUsuario().equals("isadora@gmail.com"));
 	}
@@ -51,7 +52,7 @@ public class UsuarioRepositoryTest {
 		assertTrue(listaDeUsuarios.get(0).getNome().equals("Maiar silva"));
 		assertTrue(listaDeUsuarios.get(1).getNome().equals("Michael silva"));
 		assertTrue(listaDeUsuarios.get(2).getNome().equals("Brocco silva"));
-	
+		
 	}
 	
 	@AfterAll
